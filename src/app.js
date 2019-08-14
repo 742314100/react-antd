@@ -1,6 +1,7 @@
 /*根组件*/
 import React,{Component} from 'react';
-import {Button,message} from 'antd'
+import {Button,message} from 'antd';
+import './assets/common.css'
 
 export default class App extends Component {
 	handle=()=>{
