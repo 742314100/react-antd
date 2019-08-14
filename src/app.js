@@ -5,7 +5,7 @@ export default class App extends Component {
 	render (){
 		return (
 			<div>
-			111
+			1112222
 			</div>
 		)
 	}
