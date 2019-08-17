@@ -6,10 +6,11 @@ import './assets/common.css'
 export default class App extends Component {
 	handle=()=>{
 		message.success('message success')
-	}
+	};
 	render (){
 		return (
 			<div>
+                <div>webstorm</div>
 				<Button type='primary' onClick={this.handle}>primary1</Button>
 			</div>
 		)
