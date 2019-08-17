@@ -10,7 +10,7 @@ export default class App extends Component {
 	render (){
 		return (
 			<div>
-                <div>webstorm</div>
+                <div>webstorm1</div>
 				<Button type='primary' onClick={this.handle}>primary1</Button>
 			</div>
 		)
