@@ -1,20 +1,21 @@
 /*根组件*/
 import React,{Component} from 'react';
-import {Button,message} from 'antd';
-//import './assets/common.css'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
 
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+
+/*应用根组件*/
 export default class App extends Component {
-	handle=()=>{
-		message.success('message success')
-	};
+
 	render (){
 		return (
-			<div>
-                <div>webstorere343wrm1</div>
-				<div>webstorm1</div>
-				<div>webstorm1</div><div>webstorm1</div>
-				<Button type='primary' onClick={this.handle}>primary1</Button>
-			</div>
+			<BrowserRouter>
+				<Switch>
+					<Route path='/' component={Login}></Route>
+					<Route path='/admin' component={Admin}></Route>
+				</Switch>
+			</BrowserRouter>
 		)
 	}
 }
