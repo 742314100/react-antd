@@ -10,7 +10,9 @@ export default class Login extends Component {
                 <header className='login-header'>
                     header
                 </header>
-                <section className='login-content'></section>
+                <section className='login-content'>
+                    logon
+                </section>
             </div>
         )
     }
