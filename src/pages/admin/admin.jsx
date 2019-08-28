@@ -1,7 +1,11 @@
 import React,{Component} from 'react'
 import {Redirect} from 'react-router-dom'
-
+import {Layout} from 'antd'
 import memoryUtils from "../../utils/memoryUtils"
+import Header from '../../components/header'
+import LeftNav from "../../components/left-nav"
+
+const {Footer,Sider,Content} =Layout
 
 /*后台管理的路由组件*/
 
@@ -13,10 +17,16 @@ export default class Admin extends Component {
         }
 
         return (
-            <div>
-                <h2>后台管理</h2>
-                <div>Hello {user.username}</div>
-            </div>
+           <Layout style={{height:'100%'}}>
+               <Sider>
+                   <LeftNav />
+               </Sider>
+               <Layout>
+                   <Header>Header</Header>
+                   <Content style={{backgroundColor:'white'}}>Content</Content>
+                   <Footer style={{textAlign:'center',color:'#aaa'}}>推荐使用谷歌浏览器</Footer>
+               </Layout>
+           </Layout>
         )
     }
 }

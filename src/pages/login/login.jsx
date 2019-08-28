@@ -4,7 +4,8 @@ import { Form, Icon, Input, Button, message } from 'antd';
 import logo from './images/bg.jpg'
 import {reqLogin} from "../../api"
 import memoryUtils from "../../utils/memoryUtils"
-
+import storageUtil from "../../utils/storageUtil"
+import {Redirect} from 'react-router-dom'
 
 const Item =Form.Item
 
@@ -21,6 +22,8 @@ class Login extends Component {
                     const result =await reqLogin(username,password)
                       if(result.status===0){
                           message.success('登录成功',2)
+                          const user=result.data
+                          storageUtil.saveUser(user)
                           memoryUtils.user=result.data
                           this.props.history.replace('/')
                       } else{
@@ -49,9 +52,15 @@ class Login extends Component {
     }
 
 
+
+
     render(){
         const form =this.props.form
         const {getFieldDecorator} =form
+
+        if(memoryUtils.user && memoryUtils.user._id){
+            return <Redirect to='/' />
+        }
 
         return (
             <div className='login'>

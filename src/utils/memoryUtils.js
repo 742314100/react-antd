@@ -1,5 +1,7 @@
 export default {
-    user:{}
+    user:{
+        _id:1
+    }
 }
 
 
