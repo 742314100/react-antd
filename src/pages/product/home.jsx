@@ -55,7 +55,7 @@ export default class ProductHome extends Component {
                     return (
                         <span>
                             <Button type='primary' onClick={()=>
-                                this.updateProductStatus(product._id,status)
+                                 this.updateProductStatus(product._id,status)
                             }>{btnText}</Button>
                             <span>{statusText}</span>
                         </span>

@@ -18,7 +18,8 @@ export default class ProductDetail extends Component {
             const cName1=result.data.name
             this.setState({cName1})
         }else{
-            const result=await Promise.all([reqCategory(pCategoryId),reqCategory(categoryId)])
+            const results=await Promise.all([reqCategory(pCategoryId),
+                reqCategory(categoryId)])
             const result1=results[0]
             const result2=results[1]
             const cName1=result1.data.name
