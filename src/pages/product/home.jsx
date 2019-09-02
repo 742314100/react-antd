@@ -135,7 +135,7 @@ export default class ProductHome extends Component {
 
         return (
             <div>
-                <Cart title={title} extra={extra}>
+                <Card title={title} extra={extra}>
                     <Table
                         bordered
                         rowKey='_id'
@@ -148,7 +148,7 @@ export default class ProductHome extends Component {
                             onChange:this.getProducts
                         }}
                     />
-                </Cart>
+                </Card>
             </div>
         )
     }

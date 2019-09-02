@@ -1,1 +1,3 @@
 export const BASE_IMG_PATH='BASE_IMG_PATH'
+export const PAGE_SIZE='PAGE_SIZE'
+export const UPLOAD_IMG_NAME='UPLOAD_IMG_NAME'
