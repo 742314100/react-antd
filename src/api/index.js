@@ -59,3 +59,8 @@ export const reqUpdateProductStatus=(productId,status)=>{
 
 export const reqDeleteImg =(name) =>ajax('/manage/img/delete',{name},'post')
 
+export const reqAddRole=(roleName)=>ajax('/manage/role/add',{roleName},'POST')
+
+export const reqRole=()=>ajax('/manage/role/list')
+
+export const reqUpdateRole=(role)=>ajax('/manage/role/update',role,'POST')

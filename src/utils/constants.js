@@ -1,3 +1,3 @@
-export const BASE_IMG_PATH='BASE_IMG_PATH'
-export const PAGE_SIZE='PAGE_SIZE'
-export const UPLOAD_IMG_NAME='UPLOAD_IMG_NAME'
+export const BASE_IMG_PATH='http://localhost:5000/upload/'
+export const PAGE_SIZE=5
+export const UPLOAD_IMG_NAME='image'
