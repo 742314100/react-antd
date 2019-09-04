@@ -95,6 +95,24 @@ export default class Role extends PureComponent{
         })
     }
 
+    updateRole=async()=>{
+        this.setState({
+            isShowAuth:false
+        })
+        const role=this.state.role
+        const menus=this.auth.current.getMenus()
+        role.menus=menus
+        role.auth_time=Date.now()
+        role.auth_name=memoryUtils.user.username
+        const result=await reqUpdateRole(role)
+        if(result.status===0){
+            message.success('设置角色权限成功')
+            this.setState({
+                roles:[...this.state.roles]
+            })
+        }
+    }
+
     componentWillMount() {
         this.initColumn()
     }

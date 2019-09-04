@@ -64,3 +64,10 @@ export const reqAddRole=(roleName)=>ajax('/manage/role/add',{roleName},'POST')
 export const reqRole=()=>ajax('/manage/role/list')
 
 export const reqUpdateRole=(role)=>ajax('/manage/role/update',role,'POST')
+
+export const reqAddOrUpdateUser=(user)=>ajax('/manage/user/'+(user._id?'update':'add'),user,'POST')
+
+export const reqUsers=()=>ajax('/manage/user/list')
+
+export const reqDeleteUser=(userId)=>ajax('/manage/user/delete',{userId},'POST')
+

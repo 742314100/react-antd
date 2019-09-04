@@ -5,10 +5,22 @@ import {Menu,Icon} from 'antd'
 import menuConfig from '../../config/menuConfig'
 import logo from '../../assets/images/logo.png'
 import './index.less'
+import memoryUtils from "../../utils/memoryUtils"
 
 const SubMenu = Menu.SubMenu
 
 class LeftNav extends Component {
+
+    hasAuth=(item)=>{
+        const key=item.key
+        const menuSet=this.menuSet
+        if(item.isPublic || memoryUtils.user.username ==='admin' || menuSet.has(key)){
+            return true
+        }else if(item.children){
+            return !!item.children.find(child=>menuSet.has(child.key))
+        }
+
+    }
 
     getMenuNodes=(menuList)=>{
         const path=this.props.location.pathname
