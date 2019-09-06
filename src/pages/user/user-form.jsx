@@ -21,7 +21,7 @@ class UserForm extends Component {
     }
 
     render(){
-        const {getFieldDecorator} =this.form
+        const {getFieldDecorator} =this.props.form
         const formItemLayout={
             labelCol:{span:4},
             wrapperCol:{span:16}

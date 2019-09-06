@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import storageUtil from "./utils/storageUtil"
 import memoryUtils from "./utils/memoryUtils"
 
+import {Provider} from 'react-redux'
+import store from './App'
+
 import App from './app'
 
 const user=storageUtil.getUser()
@@ -12,6 +15,13 @@ if(user && user._id){
     memoryUtils.user=user
 }
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(
+    (
+        <Provider>
+            <App />
+        </Provider>
+        ),
+    document.getElementById('root')
+);
 
 

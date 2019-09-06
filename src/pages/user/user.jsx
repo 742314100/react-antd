@@ -105,7 +105,8 @@ export default class User extends Component {
     }
 
     AddOrUpdateUser=async()=>{
-        const user=this.form.getFieldValue()
+        const user=this.form.getFieldsValue()
+        console.log(user)
         this.form.resetFields()
         if(this.user){
             user._id=this.user._id
@@ -113,6 +114,7 @@ export default class User extends Component {
         this.setState({
             isShow:false
         })
+
         const result=await reqAddOrUpdateUser(user)
         if(result.status===0){
             this.getUsers()
